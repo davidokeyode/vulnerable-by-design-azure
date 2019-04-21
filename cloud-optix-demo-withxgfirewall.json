@@ -30,9 +30,6 @@
     "SecFESubnetPrefix": "10.0.4.0/24",
     "SecBESubnetPrefix": "10.0.5.0/24",
     "SecFENSGName": "Sec_NSG",
-    "webSrvPipName": "webSrvPip",
-    "appSrvPipName": "appSrvPip",
-    "mongoDbPipName": "mongoDbPip",
     "xgPipName":"sophosXgPip",
     "publicIPAddressType": "Dynamic",
     "adminUsername": "azureadmin",
@@ -156,42 +153,6 @@
       }
     },
     {
-      "apiVersion": "2015-06-15",
-      "type": "Microsoft.Network/publicIPAddresses",
-      "name": "[variables('mongoDbPipName')]",
-      "location": "[parameters('location')]",
-      "properties": {
-        "publicIPAllocationMethod": "[variables('publicIPAddressType')]",
-        "dnsSettings": {
-          "domainNameLabel": "[concat('mongo', uniqueString(resourceGroup().id))]"
-        }
-      }
-    },
-    {
-      "apiVersion": "2015-06-15",
-      "type": "Microsoft.Network/publicIPAddresses",
-      "name": "[variables('webSrvPipName')]",
-      "location": "[parameters('location')]",
-      "properties": {
-        "publicIPAllocationMethod": "[variables('publicIPAddressType')]",
-        "dnsSettings": {
-          "domainNameLabel": "[concat('websrv', uniqueString(resourceGroup().id))]"
-        }
-      }
-    },
-    {
-      "apiVersion": "2015-06-15",
-      "type": "Microsoft.Network/publicIPAddresses",
-      "name": "[variables('appSrvPipName')]",
-      "location": "[parameters('location')]",
-      "properties": {
-        "publicIPAllocationMethod": "[variables('publicIPAddressType')]",
-        "dnsSettings": {
-          "domainNameLabel": "[concat('appsrv', uniqueString(resourceGroup().id))]"
-        }
-      }
-    },
-    {
         "apiVersion": "2015-06-15",
         "type": "Microsoft.Network/publicIPAddresses",
         "name": "[variables('XgPipName')]",
@@ -209,7 +170,6 @@
       "name": "[variables('webSrvNicName')]",
       "location": "[parameters('location')]",
       "dependsOn": [
-        "[concat('Microsoft.Network/publicIPAddresses/', variables('webSrvPipName'))]",
         "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]"
       ],
       "properties": {
@@ -218,9 +178,6 @@
             "name": "ipconfig1",
             "properties": {
               "privateIPAllocationMethod": "Dynamic",
-              "publicIPAddress": {
-                "id": "[resourceId('Microsoft.Network/publicIPAddresses',variables('webSrvPipName'))]"
-              },
               "subnet": {
                 "id": "[variables('FESubnetRef')]"
               }
@@ -235,7 +192,6 @@
       "name": "[variables('appSrvNicName')]",
       "location": "[parameters('location')]",
       "dependsOn": [
-        "[concat('Microsoft.Network/publicIPAddresses/', variables('appSrvPipName'))]",
         "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]"
       ],
       "properties": {
@@ -244,9 +200,6 @@
             "name": "ipconfig1",
             "properties": {
               "privateIPAllocationMethod": "Dynamic",
-              "publicIPAddress": {
-                "id": "[resourceId('Microsoft.Network/publicIPAddresses',variables('appSrvPipName'))]"
-              },
               "subnet": {
                 "id": "[variables('AppSubnetRef')]"
               }
@@ -261,7 +214,6 @@
       "name": "[variables('mongoDbNicName')]",
       "location": "[parameters('location')]",
       "dependsOn": [
-        "[concat('Microsoft.Network/publicIPAddresses/', variables('mongoDbPipName'))]",
         "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]"
       ],
       "properties": {
@@ -270,9 +222,6 @@
             "name": "ipconfig1",
             "properties": {
               "privateIPAllocationMethod": "Dynamic",
-              "publicIPAddress": {
-                "id": "[resourceId('Microsoft.Network/publicIPAddresses',variables('mongoDbPipName'))]"
-              },
               "subnet": {
                 "id": "[variables('DBSubnetRef')]"
               }

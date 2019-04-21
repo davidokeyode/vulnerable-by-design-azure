@@ -1,5 +1,5 @@
 # sophos-cloud-optix
-Deployment template to deploy sample resources to Azure to test the functionality of Sophos CLoud Optix. 
+Deployment template to deploy sample resources to Azure to test the functionality of Sophos Cloud Optix. 
 
 Deploying
 =========

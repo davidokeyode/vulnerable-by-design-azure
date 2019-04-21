@@ -11,7 +11,7 @@ Template Information
 ====================
 The template deploys the following resources:
 
-a) Virtual Network
+**a) Virtual Network**
 * **Frontend** - _FESubnet / 10.0.1.0/24_
 * **Application** - _AppSubnet / 10.0.2.0/24_
 * **Database** - _DBSubnet / 10.0.3.0/24_
@@ -26,15 +26,15 @@ Each NSG is then associated with a subnet:
 * _AppSubnet_ to _App_NSG_
 * _DBSubnet_ to _DB_NSG_
 
-b) Virtual Machines
+**b) Virtual Machines**
 * **Web Server** - _Ubuntu Linux_
 * **Application Server** - _Ubuntu Linux_
 * **Database Server** - _Ubuntu Linux running MongoDB_
 
-c) Azure Storage Account
+**c) Azure Storage Account**
 * **Azure Storage account with three blob containers**
 
-d) Azure SQL
+**d) Azure SQL**
 * **Azure SQL Server with a database instance**
 
 Useful Links

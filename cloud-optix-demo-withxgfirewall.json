@@ -29,9 +29,6 @@
     "DBSubnetPrefix": "10.0.3.0/24",
     "SecFESubnetPrefix": "10.0.4.0/24",
     "SecBESubnetPrefix": "10.0.5.0/24",
-    "FENSGName": "FE_NSG",
-    "AppNSGName": "App_NSG",
-    "DBNSGName": "DB_NSG",
     "SecFENSGName": "Sec_NSG",
     "webSrvPipName": "webSrvPip",
     "appSrvPipName": "appSrvPip",
@@ -113,9 +110,6 @@
       "name": "[variables('virtualNetworkName')]",
       "location": "[parameters('location')]",
       "dependsOn": [
-        "[concat('Microsoft.Network/networkSecurityGroups/', variables('FENSGName'))]",
-        "[concat('Microsoft.Network/networkSecurityGroups/', variables('AppNSGName'))]",
-        "[concat('Microsoft.Network/networkSecurityGroups/', variables('DBNSGName'))]",
         "[concat('Microsoft.Network/networkSecurityGroups/', variables('SecFENSGName'))]"
       ],
       "properties": {

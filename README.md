@@ -42,3 +42,9 @@ Useful Links
 * [Sohos Cloud Optix URL](https://www.sophos.com/en-us/products/cloud-optix.aspx)
 * [Sohos Cloud Optix FAQ](https://community.sophos.com/kb/en-us/133806)
 * [Authoring Azure Resource Manager templates](https://azure.microsoft.com/en-us/documentation/articles/resource-group-authoring-templates/)
+
+Deploying with Sophos XG Firewall
+=================================
+1) Press the deployment button and enter your Azure credentials when prompted.
+
+[![Deploy to Azure](https://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fdavidokeyode%2Fsophos-cloud-optix%2Fmaster%2Fcloud-optix-demo-withxgfirewall.json)

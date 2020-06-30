@@ -1,11 +1,11 @@
-# sophos-cloud-optix
-Deployment template to deploy sample misconfigured resources to Azure to test Azure security tools 
+# Vulnerable by Design (Scenario One)
+Deployment template to deploy sample misconfigured resources (virtual machines, virtual network, storage account and SQL databases) to Azure to test Azure security tools 
 
 Deploying
 =========
 1) Press the deployment button and enter your Azure credentials when prompted.
 
-[![Deploy to Azure](https://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fdavidokeyode%2Fsophos-cloud-optix%2Fmaster%2Fcloud-optix-demo.json)
+[![Deploy to Azure](https://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fdavidokeyode%2Fvulnerable-by-design-azure%2Fmaster%2Farm%2Fscenario-one%2Fazuredeploy.json)
 
 Template Information
 ====================

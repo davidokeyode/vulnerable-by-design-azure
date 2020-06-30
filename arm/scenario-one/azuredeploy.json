@@ -340,7 +340,7 @@
         "autoUpgradeMinorVersion": true,
         "settings": {
           "fileUris": [
-            "https://raw.githubusercontent.com/davidokeyode/sophos-cloud-optix/master/mongo-install-ubuntu.sh"
+            "https://raw.githubusercontent.com/davidokeyode/vulnerable-by-design-azure/master/arm/scenario-one/mongo-install-ubuntu.sh"
           ],
           "commandToExecute": "sh mongo-install-ubuntu.sh"
         }
